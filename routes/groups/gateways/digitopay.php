@@ -8,5 +8,12 @@ Route::prefix('digitopay')
     ->group(function ()
     {
         Route::post('callback', [DigitoPayController::class, 'callbackMethod']);
+
+        Route::middleware(['admin.filament', 'admin'])
+            ->group(function ()
+            {
+                Route::get('withdrawal/{id}/{action}', [DigitoPayController::class, 'withdrawalFromModal'])->name('digitopay.withdrawal');
+                Route::get('cancelwithdrawal/{id}/{action}', [DigitoPayController::class, 'cancelWithdrawalFromModal'])->name('digitopay.cancelwithdrawal');
+            });
     });
 

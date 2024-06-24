@@ -45,12 +45,12 @@ class Order extends Model
     /**
      * Get the user's first name.
      */
-    protected function type(): Attribute
-    {
-        return Attribute::make(
-            get: fn (?string $value) => Helper::getTypeOrder($value),
-        );
-    }
+//    protected function type(): Attribute
+//    {
+//        return Attribute::make(
+//            get: fn (?string $value) => Helper::getTypeOrder($value),
+//        );
+//    }
 
     /**
      * Get the user's first name.
