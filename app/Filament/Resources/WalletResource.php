@@ -36,7 +36,7 @@ class WalletResource extends Resource
     protected static ?int $navigationSort = 1;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

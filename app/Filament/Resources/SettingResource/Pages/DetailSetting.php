@@ -13,7 +13,7 @@ class DetailSetting extends Page
     protected static string $view = 'filament.resources.setting-resource.pages.detail-setting';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @param Model $record
      * @return bool
      */

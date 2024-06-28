@@ -30,7 +30,7 @@ class DigitoPayPaymentPage extends Page
     protected static ?string $slug = 'digitopay-pagamentos';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

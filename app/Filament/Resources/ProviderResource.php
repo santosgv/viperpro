@@ -24,7 +24,7 @@ class ProviderResource extends Resource
     protected static ?string $modelLabel = 'Todos os Provedores';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

@@ -16,7 +16,7 @@ class AffiliateWithdrawResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
      * @return bool
      */

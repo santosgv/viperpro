@@ -27,7 +27,7 @@ class GamesKeyPage extends Page implements HasForms
     // protected static ?string $slug = 'chaves-dos-jogos';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

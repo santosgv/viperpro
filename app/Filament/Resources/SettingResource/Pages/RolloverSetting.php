@@ -30,7 +30,7 @@ class RolloverSetting extends Page implements HasForms
     protected static string $view = 'filament.resources.setting-resource.pages.rollover-setting';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @param Model $record
      * @return bool
      */

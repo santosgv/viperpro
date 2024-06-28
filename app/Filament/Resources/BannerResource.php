@@ -21,7 +21,7 @@ class BannerResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-paint-brush';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

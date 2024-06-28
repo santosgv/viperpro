@@ -41,7 +41,7 @@ class Settings extends Page implements HasForms
     protected static ?string $slug = 'configuracoes';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

@@ -33,7 +33,7 @@ class UserResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

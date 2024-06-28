@@ -40,7 +40,7 @@ class PaymentSetting extends Page implements HasForms
     public ?array $data = [];
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
      * @param Model $record
      * @return bool

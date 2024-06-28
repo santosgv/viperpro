@@ -13,6 +13,13 @@ Viperpro é um projeto de código aberto desenvolvido em PHP utilizando o Framew
 com várias integrações com diferentes provedores de iGaming. Este projeto é destinado para fins de estudo.
 Use-o com responsabilidade e consciência, e não o utilize para fins fraudulentos. 
 
+## CUIDADO COM UM NOVO GOLPISTA
+Eu há um tempo após alguns haters, mudei o meu usuário do instagram, porem não sei como fizeram isso, pra mim não era possivel, alguem trocou pegou o mesmo usuário meu anterior. Já denunciei, e peço a vocês que façam o mesmo, por que esse bandido está dando inumeros golpes utilizando meu nome e meu produto.
+
+ESSE PERFIL NÂO SOU EU. DENUNCIEM!!!
+
+https://www.instagram.com/victormsalatiel
+
 Recursos:
 
 - Autenticação com Google.

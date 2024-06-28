@@ -43,7 +43,7 @@ class LayoutCssCustom extends Page implements HasForms
     public CustomLayout $custom;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

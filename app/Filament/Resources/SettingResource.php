@@ -26,7 +26,7 @@ class SettingResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

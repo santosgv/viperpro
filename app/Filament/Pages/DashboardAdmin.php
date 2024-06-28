@@ -17,7 +17,7 @@ class DashboardAdmin extends \Filament\Pages\Dashboard
     use HasFiltersForm, HasFiltersAction;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

@@ -26,7 +26,7 @@ class GatewayPage extends Page
     public Gateway $setting;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

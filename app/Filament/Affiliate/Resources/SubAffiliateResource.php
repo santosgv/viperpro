@@ -25,7 +25,7 @@ class SubAffiliateResource extends Resource
     protected static ?string $modelLabel = 'Sub. Afiliados';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

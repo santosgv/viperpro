@@ -36,7 +36,7 @@ class AdvancedPage extends Page implements HasForms
     public $output;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

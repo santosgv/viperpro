@@ -28,7 +28,7 @@ class SettingSpin extends Page
     protected static string $view = 'filament.pages.setting-spin';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

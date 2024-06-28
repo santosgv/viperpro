@@ -18,7 +18,7 @@ class AffiliateWithdrawResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

@@ -28,7 +28,7 @@ class VipResource extends Resource
     protected static ?string $slug = 'vip';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

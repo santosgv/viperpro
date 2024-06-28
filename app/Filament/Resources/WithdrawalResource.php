@@ -30,7 +30,7 @@ class WithdrawalResource extends Resource
     protected static ?int $navigationSort = 3;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

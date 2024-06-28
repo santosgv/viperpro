@@ -25,7 +25,7 @@ class SettingMailPage extends Page
     public SettingMail $setting;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

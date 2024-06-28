@@ -35,7 +35,7 @@ class DepositResource extends Resource
     protected static ?int $navigationSort = 2;
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

@@ -25,7 +25,7 @@ class CategoryResource extends Resource
     protected static ?string $modelLabel = 'Todas as Categorias';
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @return bool
      */
     public static function canAccess(): bool

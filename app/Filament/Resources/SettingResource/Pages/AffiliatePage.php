@@ -39,7 +39,7 @@ class AffiliatePage extends Page  implements HasForms
     public ?array $data = [];
 
     /**
-     * @dev @victormsalatiel
+     * @dev @venixplataformas
      * @param Model $record
      * @return bool
      */
