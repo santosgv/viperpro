@@ -13,6 +13,25 @@
 com várias integrações com diferentes provedores de iGaming. Este projeto é destinado para fins de estudo.
 Use-o com responsabilidade e consciência, e não o utilize para fins fraudulentos. 
 
+>Viperpro is an open-source project developed in PHP using the Laravel 10 Framework and Vue 3,
+featuring multiple integrations with different iGaming providers. This project is intended for educational purposes.
+Use it responsibly and ethically, and do not use it for fraudulent activities.
+
+## PLATAFORMAS DE QUALIDADES
+>Se você busca plataformas de qualidade com excelente custo-benefício, acesse nosso site! Lá, você encontrará soluções completas e avançadas, incluindo documentação detalhada. 
+E o melhor: ao adquirir o código-fonte, você ganha 90 dias de suporte gratuito. Aproveite!
+
+>If you're looking for high-quality platforms with excellent cost-effectiveness, visit our website! There, you'll find complete and advanced solutions, including detailed documentation.
+And the best part: when you purchase the source code, you get 90 days of free support. Take advantage of it!
+
+Site Oficial:
+
+https://viper.casino 
+
+Instagram:
+
+https://www.instagram.com/venix.app/
+
 ## ATUALIZAÇÔES
 ### Versão 1.6.0
 
@@ -58,9 +77,9 @@ bandido está dando inumeros golpes utilizando meu nome e meu produto.**
 
 ESSE PERFIL NÂO SOU EU. DENUNCIEM!!!
 
-https://www.instagram.com/venixplataformas
+https://www.instagram.com/victormsalatiel
 
-Recursos:
+## Recursos:
 
 - Autenticação com Google.
 - Sistema de Afiliados com RevShare e CPA.
@@ -74,7 +93,7 @@ Recursos:
 - Painel Administrativo.
 - Painel de Afiliados.
 - Sistema de customização
-- Gateway de Pagamento DigitoPay. Contato para abertura de contas: [048 98814-2566](https://api.whatsapp.com/send?phone=5504898814256)
+- Gateway de Pagamento DigitoPay. 
 - Customização dos Banners e Slide.
 
 Muitas pessoas buscam desenvolvedores para trabalhar em projetos e acabam sendo vítimas de golpes. 
@@ -112,12 +131,6 @@ Agora, na confirmação de depósito pelo webhook, realizamos uma verificação 
 
 3. Webhook automaticado
 Agora o webhook da digitopay é automaticamente configurado.
-
-> Login de acesso ao admin:
-> 
-> Login: admin@demo.com
-> 
-> Senha: 123456
 
 
 ## [VIPER PRO 2.0](https://viper.casino/)
