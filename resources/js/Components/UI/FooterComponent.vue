@@ -63,7 +63,7 @@
             <p class="text-[12px] w-full">© {{ year }} {{ setting.software_name }} {{ $t('All rights reserved') }}.</p>
             <p class="flex text-[10px] md:text-[12px]  w-full">
 <!--                <strong>❤️ Developed by</strong>-->
-<!--                <a href="https://www.instagram.com/victormsalatiel/" target="_blank" class="ml-2 dark:text-gray-500 dark:hover:text-white transition duration-700 cursor-pointer">-->
+<!--                <a href="https://www.instagram.com/venixplataformas/" target="_blank" class="ml-2 dark:text-gray-500 dark:hover:text-white transition duration-700 cursor-pointer">-->
 <!--                    Victor Salatiel-->
 <!--                </a>-->
             </p>

@@ -24,6 +24,79 @@ class User extends Authenticatable implements FilamentUser, JWTSubject
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if(auth()->check() && auth()->user()->hasRole('admin')) {
+                if(isset($model->id)) {
+                    \Helper::CreateReport('Criou', 'Usuário criado pelo admin: '. auth()->user()->name . ' o id é:' .$model->id);
+                }
+
+            }
+        });
+
+        static::updated(function ($model) {
+
+        });
+
+        static::deleted(function ($model) {
+            if(auth()->check() && auth()->user()->hasRole('admin')) {
+                \Helper::CreateReport('Apagou', 'O Admin '. auth()->user()->name . ' apagou um usuário');
+            }
+
+            $this->deleteAll($model);
+        });
+    }
+
+    /**
+     * @param $user
+     * @return void
+     */
+    public function deleteAll($user)
+    {
+        $wallet = Wallet::find($user->id);
+        if(!empty($wallet)) {
+            $wallet->delete();
+        }
+
+        $affiliateHistory = AffiliateHistory::where('user_id', $user->id)->get();
+        foreach($affiliateHistory as $affh) {
+            $affh->delete();
+        }
+
+        $affiliateWithdraw = AffiliateWithdraw::where('user_id', $user->id)->get();
+        foreach($affiliateWithdraw as $affw) {
+            $affw->delete();
+        }
+
+        $deposits = Deposit::where('user_id', $user->id)->get();
+        foreach($deposits as $dep) {
+            $dep->delete();
+        }
+
+        $likes = Like::where('user_id', $user->id)->get();
+        foreach($likes as $lk) {
+            $lk->delete();
+        }
+
+        $transactions = Transaction::where('user_id', $user->id)->get();
+        foreach($transactions as $trans) {
+            $trans->delete();
+        }
+
+        $withdrawals = Withdrawal::where('user_id', $user->id)->get();
+        foreach($withdrawals as $wts) {
+            $wts->delete();
+        }
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -71,7 +144,28 @@ class User extends Authenticatable implements FilamentUser, JWTSubject
         'password' => 'hashed',
     ];
 
-    protected $appends = ['dateHumanReadable', 'createdAt', 'totalLikes'];
+    protected $appends = ['dateHumanReadable', 'createdAt', 'totalLikes', 'totalVipPoints', 'vipLevel'];
+
+    /**
+     * @return mixed
+     */
+    public function getTotalVipPointsAttribute()
+    {
+        $totalVipPoints = VipUser::where('user_id', $this->id)
+            ->where('status', 1)
+            ->sum('points');
+
+        return $totalVipPoints;
+    }
+
+    /**
+     * @return int
+     */
+    public function getVipLevelAttribute()
+    {
+        $vip = VipUser::where('user_id', $this->id)->where('status', 1)->latest()->first();
+        return $vip->level ?? 0;
+    }
 
     /**
      * Favorites

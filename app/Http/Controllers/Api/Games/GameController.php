@@ -32,7 +32,7 @@ class GameController extends Controller
         PlayGamingTrait;
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Display a listing of the resource.
      */
     public function index()
@@ -47,7 +47,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * @return \Illuminate\Http\JsonResponse
      */
     public function featured()
@@ -63,7 +63,7 @@ class GameController extends Controller
     /**
      * Source Provider
      *
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * @param Request $request
      * @param $token
      * @param $action
@@ -99,7 +99,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Store a newly created resource in storage.
      */
     public function toggleFavorite($id)
@@ -124,7 +124,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Store a newly created resource in storage.
      */
     public function toggleLike($id)
@@ -149,7 +149,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Display the specified resource.
      */
     public function show(string $id)
@@ -267,7 +267,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Show the form for editing the specified resource.
      */
     public function allGames(Request $request)
@@ -299,7 +299,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Update the specified resource in storage.
      */
     public function webhookGoldApiMethod(Request $request)
@@ -308,7 +308,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Update the specified resource in storage.
      */
     public function webhookUserBalanceMethod(Request $request)
@@ -317,7 +317,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Update the specified resource in storage.
      */
     public function webhookGameCallbackMethod(Request $request)
@@ -326,7 +326,7 @@ class GameController extends Controller
     }
 
     /**
-     * @dev victormsalatiel
+     * @dev venixplataformas
      * Update the specified resource in storage.
      */
     public function webhookMoneyCallbackMethod(Request $request)

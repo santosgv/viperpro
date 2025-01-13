@@ -18,7 +18,7 @@ trait FiversTrait
     use MissionTrait;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @var string
      */
     protected static $agentCode;
@@ -27,7 +27,7 @@ trait FiversTrait
     protected static $apiEndpoint;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return void
      */
     public static function getCredentials(): bool
@@ -51,7 +51,7 @@ trait FiversTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $rtp
      * @param $provider
      * @return void
@@ -79,7 +79,7 @@ trait FiversTrait
     /**
      * Create User
      * Metodo para criar novo usuário
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return bool
      */
@@ -105,7 +105,7 @@ trait FiversTrait
 
     /**
      * Iniciar Jogo
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Metodo responsavel para iniciar o jogo
      *
      */
@@ -145,7 +145,7 @@ trait FiversTrait
 
     /**
      * Get FIvers Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return false|void
      */
     public static function getFiversUserDetail()
@@ -172,7 +172,7 @@ trait FiversTrait
 
     /**
      * Get FIvers Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $provider_code
      * @param $game_code
      * @param $lang
@@ -203,7 +203,7 @@ trait FiversTrait
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -227,7 +227,7 @@ trait FiversTrait
     /**
      * Set Transactions
      *
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -299,7 +299,7 @@ trait FiversTrait
     /**
      * Prepare Transaction
      * Metodo responsavel por preparar a transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @param $wallet
      * @param $userCode
@@ -382,7 +382,7 @@ trait FiversTrait
 
     /**
      * @param $request
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return \Illuminate\Http\JsonResponse|null
      */
     public static function WebhooksFivers($request)
@@ -401,7 +401,7 @@ trait FiversTrait
     /**
      * Create Transactions
      * Metodo para criar uma transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return false
      */

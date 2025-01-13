@@ -19,7 +19,7 @@ trait EvergameTrait
     use MissionTrait;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @var string
      */
     protected static $agentCode;
@@ -28,7 +28,7 @@ trait EvergameTrait
     protected static $apiEndpoint;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return void
      */
     public static function getCredentialsEvergame(): bool
@@ -44,7 +44,7 @@ trait EvergameTrait
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $rtp
      * @param $provider
      * @return void
@@ -72,7 +72,7 @@ trait EvergameTrait
     /**
      * Create User
      * Metodo para criar novo usuário
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return bool
      */
@@ -98,7 +98,7 @@ trait EvergameTrait
 
     /**
      * Iniciar Jogo
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Metodo responsavel para iniciar o jogo
      *
      */
@@ -140,7 +140,7 @@ trait EvergameTrait
 
     /**
      * Get FIvers Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return false|void
      */
     public static function getFiversUserDetailEvergame()
@@ -167,7 +167,7 @@ trait EvergameTrait
 
     /**
      * Get FIvers Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $provider_code
      * @param $game_code
      * @param $lang
@@ -198,7 +198,7 @@ trait EvergameTrait
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -224,7 +224,7 @@ trait EvergameTrait
     /**
      * Set Transactions
      *
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -272,7 +272,7 @@ trait EvergameTrait
     /**
      * Prepare Transaction
      * Metodo responsavel por preparar a transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @param $wallet
      * @param $userCode
@@ -361,7 +361,7 @@ trait EvergameTrait
     }
     /**
      * @param $request
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return \Illuminate\Http\JsonResponse|null
      */
     public static function WebhooksEvergame($request)
@@ -380,7 +380,7 @@ trait EvergameTrait
     /**
      * Create Transactions
      * Metodo para criar uma transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return false
      */

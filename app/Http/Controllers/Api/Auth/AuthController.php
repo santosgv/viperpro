@@ -67,7 +67,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         try {
-            $setting = \Helper::getSetting();
+            $setting = Setting::first();
 
              $rules = [
                 'name'          => 'required|string',
@@ -95,6 +95,7 @@ class AuthController extends Controller
 
             if($user = User::create($userData))
             {
+//
                 if(isset($request->reference_code) && !empty($request->reference_code)) {
                     // P20TUKHVRV
                     $checkAffiliate = User::where('inviter_code', $request->reference_code)->first();
@@ -273,6 +274,10 @@ class AuthController extends Controller
      */
     protected function respondWithToken(string $token)
     {
+        if(auth('api')->check() && !empty(auth('api')->user()->id)) {
+            \Helper::CreateReport('Cadastrado', 'Novo usuário cadastrado do id: '. auth('api')->user()->id);
+        }
+
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',

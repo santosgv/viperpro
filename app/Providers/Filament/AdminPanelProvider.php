@@ -3,26 +3,28 @@
 namespace App\Providers\Filament;
 
 use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin;
-use App\Filament\Pages\AdvancedPage;
-use App\Filament\Pages\DigitoPayPaymentPage;
-use App\Filament\Pages\GamesKeyPage;
-use App\Filament\Pages\GatewayPage;
-use App\Filament\Pages\LayoutCssCustom;
-use App\Filament\Pages\SettingMailPage;
-use App\Filament\Pages\SettingSpin;
-use App\Filament\Resources\AffiliateWithdrawResource;
-use App\Filament\Resources\BannerResource;
-use App\Filament\Resources\CategoryResource;
-use App\Filament\Resources\DepositResource;
-use App\Filament\Resources\GameResource;
-use App\Filament\Resources\MissionResource;
-use App\Filament\Resources\OrderResource;
-use App\Filament\Resources\ProviderResource;
-use App\Filament\Resources\SettingResource;
-use App\Filament\Resources\UserResource;
-use App\Filament\Resources\VipResource;
-use App\Filament\Resources\WalletResource;
-use App\Filament\Resources\WithdrawalResource;
+use App\Filament\Admin\Pages\AdvancedPage;
+use App\Filament\Admin\Pages\DashboardAdmin;
+use App\Filament\Admin\Pages\DigitoPayPaymentPage;
+use App\Filament\Admin\Pages\GamesKeyPage;
+use App\Filament\Admin\Pages\GatewayPage;
+use App\Filament\Admin\Pages\LayoutCssCustom;
+use App\Filament\Admin\Pages\SettingMailPage;
+use App\Filament\Admin\Pages\SettingSpin;
+use App\Filament\Admin\Resources\AffiliateWithdrawResource;
+use App\Filament\Admin\Resources\BannerResource;
+use App\Filament\Admin\Resources\CategoryResource;
+use App\Filament\Admin\Resources\DepositResource;
+use App\Filament\Admin\Resources\GameResource;
+use App\Filament\Admin\Resources\MissionResource;
+use App\Filament\Admin\Resources\OrderResource;
+use App\Filament\Admin\Resources\ProviderResource;
+use App\Filament\Admin\Resources\ReportResource;
+use App\Filament\Admin\Resources\SettingResource;
+use App\Filament\Admin\Resources\UserResource;
+use App\Filament\Admin\Resources\VipResource;
+use App\Filament\Admin\Resources\WalletResource;
+use App\Filament\Admin\Resources\WithdrawalResource;
 use App\Http\Middleware\CheckAdmin;
 use App\Livewire\AdminWidgets;
 use App\Livewire\WalletOverview;
@@ -42,7 +44,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use App\Filament\Pages\DashboardAdmin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -68,15 +69,15 @@ class AdminPanelProvider extends PanelProvider
 
             ->font('Roboto Condensed')
             ->brandLogo(fn () => view('filament.components.logo'))
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\\Filament\\Admin\\Resources')
+            ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\\Filament\\Admin\\Pages')
             ->pages([
                 DashboardAdmin::class,
             ])
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->sidebarCollapsibleOnDesktop()
             ->collapsibleNavigationGroups(true)
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\\Filament\\Admin\\Widgets')
             ->widgets([
                 WalletOverview::class,
                 AdminWidgets::class,
@@ -97,6 +98,7 @@ class AdminPanelProvider extends PanelProvider
                             ->items([
                                 ...MissionResource::getNavigationItems(),
                                 ...VipResource::getNavigationItems(),
+                                ...ReportResource::getNavigationItems(),
                             ])
                         : NavigationGroup::make()
                     ,

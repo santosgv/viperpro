@@ -10,6 +10,29 @@ class Wallet extends Model
 {
     use HasFactory;
 
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+
+        });
+
+        static::updated(function ($model) {
+
+        });
+
+        static::deleted(function ($model) {
+
+        });
+    }
+
     /**
      * The database table used by the model.
      *

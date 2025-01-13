@@ -249,8 +249,8 @@ trait DigitoPayTrait
     /**
      * @param $idTransaction
      * @param $amount
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
-     * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
+     * * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      * @return void
      */
     private static function digitoPayGenerateDeposit($idTransaction, $amount)
@@ -272,8 +272,8 @@ trait DigitoPayTrait
     /**
      * @param $idTransaction
      * @param $amount
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
-     * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
+     * * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      * @return Transaction
      */
     private static function digitoPayGenerateTransaction($idTransaction, $amount, $accept_bonus)

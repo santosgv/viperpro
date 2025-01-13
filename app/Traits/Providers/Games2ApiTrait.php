@@ -20,7 +20,7 @@ trait Games2ApiTrait
     use MissionTrait;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @var string
      */
     protected static $agentCode;
@@ -29,7 +29,7 @@ trait Games2ApiTrait
     protected static $apiEndpoint;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return void
      */
     public static function getCredentialsGames2Api(): bool
@@ -45,7 +45,7 @@ trait Games2ApiTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return \Illuminate\Http\JsonResponse|void
      */
     public static function GetAllProvidersGames2Api()
@@ -172,7 +172,7 @@ trait Games2ApiTrait
     /**
      * Create User
      * Metodo para criar novo usuário
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return bool
      */
@@ -198,7 +198,7 @@ trait Games2ApiTrait
 
     /**
      * Iniciar Jogo
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Metodo responsavel para iniciar o jogo
      *
      */
@@ -240,7 +240,7 @@ trait Games2ApiTrait
 
     /**
      * Get FIvers Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return false|void
      */
     public static function getUserDetailGames2()
@@ -267,7 +267,7 @@ trait Games2ApiTrait
 
     /**
      * Get FIvers Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $provider_code
      * @param $game_code
      * @param $lang
@@ -298,7 +298,7 @@ trait Games2ApiTrait
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -322,7 +322,7 @@ trait Games2ApiTrait
     /**
      * Set Transactions
      *
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -379,7 +379,7 @@ trait Games2ApiTrait
     /**
      * Prepare Transaction
      * Metodo responsavel por preparar a transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @param $wallet
      * @param $userCode
@@ -472,7 +472,7 @@ trait Games2ApiTrait
 
     /**
      * @param $request
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return \Illuminate\Http\JsonResponse|null
      */
     public static function WebhooksGames2($request)
@@ -495,7 +495,7 @@ trait Games2ApiTrait
     /**
      * Create Transactions
      * Metodo para criar uma transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return false
      */

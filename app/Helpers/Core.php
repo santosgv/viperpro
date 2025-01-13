@@ -6,6 +6,7 @@ namespace App\Helpers;
 use App\Helpers\Core as Helper;
 use App\Models\AffiliateHistory;
 use App\Models\CustomLayout;
+use App\Models\Report;
 use App\Models\SpinConfigs;
 use App\Models\Order;
 use App\Models\Setting;
@@ -16,6 +17,8 @@ use App\Models\VipUser;
 use App\Models\Wallet;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use NumberFormatter;
@@ -23,6 +26,32 @@ use Illuminate\Support\Facades\Http;
 
 class Core
 {
+    /**
+     * @param $action
+     * @param $description
+     * @return mixed
+     */
+    public static function CreateReport($action, $description)
+    {
+        if(auth()->check()) {
+            return Report::create([
+                'user_id' => auth()->user()->id,
+                'description' => $description,
+                'page_url' => url()->current(),
+                'page_action' => $action
+            ]);
+        }
+
+        if(auth('api')->check()) {
+            return Report::create([
+                'user_id' => auth('api')->user()->id,
+                'description' => $description,
+                'page_url' => url()->current(),
+                'page_action' => $action
+            ]);
+        }
+    }
+
     /**
      * Validate Hash
      * # 1.5.0
@@ -98,8 +127,8 @@ class Core
     /**
      * Paga e atualiza o bonus vip
      *
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
-     * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
+     * * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      * @param Wallet $wallet
      * @param $price
      * @return void
@@ -108,36 +137,60 @@ class Core
     {
         $setting = Setting::first();
 
-        if($setting->activate_vip_bonus) {
-            $wallet->increment('vip_points', ($price * $setting->bonus_vip));
+        if ($setting->activate_vip_bonus) {
+            try {
+                DB::beginTransaction();
 
-            /// verificar se subiu de level
-            $vip = Vip::where('bet_required', '<=', $wallet->vip_points)->first();
-            if(!empty($vip)) {
+                // Incrementa os pontos VIP na carteira do usuário
+                $vipPoints = $price * $setting->bonus_vip;
+                $wallet->increment('vip_points', $vipPoints);
 
-                /// verificar se já subiu pra esse nivel
-                $checkVip = VipUser::where('user_id', $wallet->user_id)->where('vip_id', $vip->id)->where('status', 1)->first();
-                if(empty($checkVip)) {
-                    VipUser::create([
-                        'user_id' => $wallet->user_id,
-                        'vip_id' => $vip->id,
-                        'status' => 1
-                    ]);
+                // Busca todos os níveis VIP que o usuário alcançou com os pontos atuais
+                $vips = Vip::where('bet_required', '<=', $wallet->vip_points)
+                    ->orderBy('bet_required', 'asc')
+                    ->get();
 
-                    /// atualiza o level vip
-                    $wallet->increment('vip_level', 1);
+                foreach ($vips as $vip) {
+                    // Verifica se o usuário já está nesse nível VIP
+                    $checkVip = VipUser::where('user_id', $wallet->user_id)
+                        ->where('vip_id', $vip->id)
+                        ->where('status', 1)
+                        ->first();
+
+                    if (!$checkVip) {
+                        $vipPoints = $vip->bet_bonus * $setting->bonus_vip;
+                        // Cria o registro do novo nível VIP do usuário
+                        VipUser::create([
+                            'user_id' => $wallet->user_id,
+                            'vip_id'  => $vip->id,
+                            'level'   => $vip->bet_level,
+                            'points'  => $vipPoints,
+                            'status'  => 1
+                        ]);
+
+                        // Paga o bônus correspondente ao nível VIP
+                        $wallet->increment('balance_bonus', $vip->bet_bonus);
+
+                        // Atualiza o nível VIP na carteira do usuário para o nível atual
+                        $wallet->vip_level = $vip->bet_level;
+                        $wallet->save();
+                    }
                 }
+
+                DB::commit();
+            } catch (\Exception $e) {
+                DB::rollBack();
+                Log::error('Erro ao pagar bônus VIP: ' . $e->getMessage());
+
+                // Tratar o erro conforme necessário, por exemplo, lançar uma exceção personalizada
+                throw new \RuntimeException('Não foi possível processar o bônus VIP. Por favor, tente novamente mais tarde.');
             }
         }
-
-        /// verificar se o cara tem vip pra receber, se receber já paga.
-        /// jogar na carteira de jogo "Balance" e não para carteira de saque
-
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
-     * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
+     * * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      * @param $userId
      * @param $changeBonus
      * @param $WinAmount
@@ -264,7 +317,7 @@ class Core
      * Distribuições
      *
      * Pega todas as distribuições
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return string[]
      */
     public static function getDistribution(): array
@@ -320,7 +373,7 @@ class Core
     /**
      * Get Ative Wallet
      * Pegar uma carteira ativa
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return null
      */
     public static function getActiveWallet()
@@ -333,7 +386,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return void
      */
     public static function getGoogleFonts()
@@ -345,7 +398,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $tamanhoCodigo
      * @return string
      */
@@ -363,7 +416,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $odds
      * @return float|int
      */
@@ -376,7 +429,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $golsCasa
      * @param $golsVisitante
      * @param $oddsCasa
@@ -399,7 +452,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $data
      * @return string|void
      */
@@ -414,7 +467,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $key
      * @return string
      */
@@ -444,7 +497,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $key
      * @return string
      */
@@ -462,7 +515,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $key
      * @return string|void
      */
@@ -484,7 +537,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $string
      * @return bool
      */
@@ -511,7 +564,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $string
      * @return bool
      */
@@ -529,7 +582,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $string
      * @return bool
      */
@@ -562,7 +615,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $nomeCompleto
      * @return string
      *
@@ -578,7 +631,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $controllerName
      * @return mixed
      * @throws \Exception
@@ -600,7 +653,7 @@ class Core
      * Metodo responsavel pelo historico dos jogos, e também controle de  ganhos de afiliados
      * Como revshare e CPA.
      *
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $userId
      * @param $type
      * @param $amount
@@ -778,7 +831,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $arr
      * @return int|mixed
      */
@@ -794,7 +847,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $drops
      * @return int[]
      */
@@ -808,7 +861,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $val
      * @param $digits
      * @return float
@@ -818,7 +871,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $lines
      * @return float|int|mixed
      */
@@ -835,7 +888,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $drops
      * @param $mult
      * @return array
@@ -853,7 +906,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $data
      */
     public static function arrayToObject($data)
@@ -869,7 +922,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return null
      */
     public static function getToken()
@@ -886,7 +939,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return float
      */
     public static function getBalance()
@@ -899,7 +952,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Get Settings
      * @return \Illuminate\Cache\
      */
@@ -917,7 +970,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Get Settings
      * @return \Illuminate\Cache\
      */
@@ -952,7 +1005,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $bytes
      * @return string
      */
@@ -969,8 +1022,8 @@ class Core
 
     /**
      * Amount Format Decimal
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
-     * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
+     * * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      *
      * @param $value
      * @return string
@@ -988,7 +1041,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Amount Format Decimal
      *
      * @param $value
@@ -1007,7 +1060,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Amount Format Decimal
      *
      * @param $value
@@ -1043,7 +1096,7 @@ class Core
 
     /**
      * Days In Month
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @param $month
      * @param $year
@@ -1055,7 +1108,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $date
      * @return array|string|string[]
      */
@@ -1075,7 +1128,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $string
      * @return mixed
      */
@@ -1089,7 +1142,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $url
      * @return string
      */
@@ -1117,7 +1170,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Upload
      *
      * @param $file
@@ -1143,7 +1196,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Format Number
      *
      * @param $number
@@ -1161,7 +1214,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Check Text
      */
     public static function checkText($str, $url = null)
@@ -1185,7 +1238,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $path
      * @return string
      */
@@ -1195,7 +1248,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Prepare Fields Array
      *
      * @param $data
@@ -1207,7 +1260,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $bytes
      * @param int $precision
      * @return string
@@ -1227,7 +1280,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $extension
      * @return string|null
      */
@@ -1278,7 +1331,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $country
      * @return bool
      */
@@ -1296,7 +1349,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $country
      * @return bool
      */
@@ -1315,7 +1368,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Format Checkbox
      * @param $value
      * @return int
@@ -1382,7 +1435,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $value
      * @return mixed
      */
@@ -1401,7 +1454,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $str
      * @return null|string|string[]
      */
@@ -1410,7 +1463,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Amount Prepare
      * @param $float_dollar_amount
      * @return string
@@ -1436,7 +1489,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $currency
      * @return string
      */
@@ -1456,7 +1509,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $array
      * @return mixed
      */
@@ -1478,7 +1531,7 @@ class Core
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $token
      * @return mixed|string
      */
@@ -1495,7 +1548,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $string
      * @return bool
      */
@@ -1505,7 +1558,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $texto
      * @return string
      */
@@ -1530,7 +1583,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $texto
      * @return string
      */
@@ -1555,7 +1608,7 @@ class Core
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return mixed
      */
     public static function WheelPrizes() {

@@ -77,11 +77,6 @@ class Setting extends Model
         'rollover_deposit',
         'disable_rollover',
         'rollover_protection',
-
-
-
-
-
     ];
 
     protected $hidden = array('updated_at');

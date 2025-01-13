@@ -21,7 +21,7 @@ trait WorldSlotTrait
 
     /**
      * 456
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @var string
      */
     protected static $agentCode;
@@ -30,7 +30,7 @@ trait WorldSlotTrait
     protected static $apiEndpoint;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return void
      */
     public static function getCredentialsWorldSlot(): bool
@@ -46,7 +46,7 @@ trait WorldSlotTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $rtp
      * @param $provider
      * @return void
@@ -74,7 +74,7 @@ trait WorldSlotTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $rtp
      * @param $provider
      * @return void
@@ -102,7 +102,7 @@ trait WorldSlotTrait
     /**
      * Create User
      * Metodo para criar novo usuário
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return bool
      */
@@ -128,7 +128,7 @@ trait WorldSlotTrait
 
     /**
      * Iniciar Jogo
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * Metodo responsavel para iniciar o jogo
      *
      */
@@ -172,7 +172,7 @@ trait WorldSlotTrait
 
     /**
      * Get WorldSlot Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return false|void
      */
     public static function getWorldSlotUserDetail()
@@ -199,7 +199,7 @@ trait WorldSlotTrait
 
     /**
      * Get WorldSlot Balance
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $provider_code
      * @param $game_code
      * @param $lang
@@ -234,7 +234,7 @@ trait WorldSlotTrait
     /**
      * Prepare Transaction
      * Metodo responsavel por preparar a transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @param $wallet
      * @param $userCode
@@ -282,7 +282,7 @@ trait WorldSlotTrait
 
     /**
      * @param $request
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @return \Illuminate\Http\JsonResponse|null
      */
     public static function WebhooksWorldSlot($request)
@@ -300,7 +300,7 @@ trait WorldSlotTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -321,7 +321,7 @@ trait WorldSlotTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @return \Illuminate\Http\JsonResponse|void|null
      */
@@ -527,7 +527,7 @@ trait WorldSlotTrait
     /**
      * Create Transactions
      * Metodo para criar uma transação
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      *
      * @return false
      */

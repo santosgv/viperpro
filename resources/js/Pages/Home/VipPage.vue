@@ -21,17 +21,17 @@
                     </div>
 
                     <div class="pt-6">
-                        <div class="flex justify-between items-center self-center w-full mt-3 p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-5 md:justify-between items-center self-center w-full mt-3 p-4">
                             <div>
                                 <img :src="`/assets/images/00.png`" alt="" class="h-16">
                             </div>
-                            <div class="flex gap-2">
-                                <p>Para o próximo nível</p>
+                            <div class="flex gap-2 col-span-1 md:col-span-3 justify-center mb-3">
+                                <p>Próximo nível</p>
                                 <a href="" class="font-bold text-primary">Vip {{ nextLevel?.bet_level }}</a>
-                                <p>Aposta válida ainda é necessária </p>
+                                <p>Total de pontos </p>
                                 <a href="" class="font-bold text-primary">{{ nextLevel?.bet_required }}</a>
                             </div>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 justify-end">
                                 <button type="button" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
                                     Regras
                                 </button>
@@ -58,45 +58,45 @@
                                     aria-controls="vipdefault-panel"
                                     aria-selected="false"
                                 >
-                                    Bônus de aumento de nível
+                                    Bônus Vip
                                 </button>
                             </li>
-                            <li class="me-2" role="presentation">
-                                <button
-                                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                                    id="weeklybonus-tab"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="weeklybonus-panel"
-                                    aria-selected="false"
-                                >
-                                    Bônus Semanal
-                                </button>
-                            </li>
-                            <li class="me-2" role="presentation">
-                                <button
-                                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                                    id="monthlybonus-tab"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="monthlybonus-panel"
-                                    aria-selected="false"
-                                >
-                                    Bônus Mensal
-                                </button>
-                            </li>
-                            <li class="me-2" role="presentation">
-                                <button
-                                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                                    id="annualbonus-tab"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="annualbonus-panel"
-                                    aria-selected="false"
-                                >
-                                    Bônus Anual
-                                </button>
-                            </li>
+<!--                            <li class="me-2" role="presentation">-->
+<!--                                <button-->
+<!--                                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"-->
+<!--                                    id="weeklybonus-tab"-->
+<!--                                    type="button"-->
+<!--                                    role="tab"-->
+<!--                                    aria-controls="weeklybonus-panel"-->
+<!--                                    aria-selected="false"-->
+<!--                                >-->
+<!--                                    Bônus Semanal-->
+<!--                                </button>-->
+<!--                            </li>-->
+<!--                            <li class="me-2" role="presentation">-->
+<!--                                <button-->
+<!--                                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"-->
+<!--                                    id="monthlybonus-tab"-->
+<!--                                    type="button"-->
+<!--                                    role="tab"-->
+<!--                                    aria-controls="monthlybonus-panel"-->
+<!--                                    aria-selected="false"-->
+<!--                                >-->
+<!--                                    Bônus Mensal-->
+<!--                                </button>-->
+<!--                            </li>-->
+<!--                            <li class="me-2" role="presentation">-->
+<!--                                <button-->
+<!--                                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"-->
+<!--                                    id="annualbonus-tab"-->
+<!--                                    type="button"-->
+<!--                                    role="tab"-->
+<!--                                    aria-controls="annualbonus-panel"-->
+<!--                                    aria-selected="false"-->
+<!--                                >-->
+<!--                                    Bônus Anual-->
+<!--                                </button>-->
+<!--                            </li>-->
                         </ul>
                     </div>
                     <div id="tabContentExample">
@@ -109,33 +109,33 @@
                                 <TableVip :vips="nivelToday" :vipPoints="vipPoints" />
                             </div>
                         </div>
-                        <div
-                            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
-                            id="weeklybonus-panel"
-                            role="tabpanel"
-                            aria-labelledby="weeklybonus-tab">
-                            <div class="flex w-full">
-                                <TableVip :vips="nivelWeekly" :vipPoints="vipPoints" />
-                            </div>
-                        </div>
-                        <div
-                            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
-                            id="monthlybonus-panel"
-                            role="tabpanel"
-                            aria-labelledby="monthlybonus-tab">
-                            <div class="flex w-full">
-                                <TableVip :vips="nivelMonthly" :vipPoints="vipPoints" />
-                            </div>
-                        </div>
-                        <div
-                            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
-                            id="annualbonus-panel"
-                            role="tabpanel"
-                            aria-labelledby="annualbonus-tab">
-                            <div class="flex w-full">
-                                <TableVip :vips="nivelYearly" :vipPoints="vipPoints" />
-                            </div>
-                        </div>
+<!--                        <div-->
+<!--                            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"-->
+<!--                            id="weeklybonus-panel"-->
+<!--                            role="tabpanel"-->
+<!--                            aria-labelledby="weeklybonus-tab">-->
+<!--                            <div class="flex w-full">-->
+<!--                                <TableVip :vips="nivelWeekly" :vipPoints="vipPoints" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div-->
+<!--                            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"-->
+<!--                            id="monthlybonus-panel"-->
+<!--                            role="tabpanel"-->
+<!--                            aria-labelledby="monthlybonus-tab">-->
+<!--                            <div class="flex w-full">-->
+<!--                                <TableVip :vips="nivelMonthly" :vipPoints="vipPoints" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div-->
+<!--                            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"-->
+<!--                            id="annualbonus-panel"-->
+<!--                            role="tabpanel"-->
+<!--                            aria-labelledby="annualbonus-tab">-->
+<!--                            <div class="flex w-full">-->
+<!--                                <TableVip :vips="nivelYearly" :vipPoints="vipPoints" />-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                     <!-- End Tabs -->
 
@@ -192,21 +192,6 @@ export default {
                         id: 'vipdefault',
                         triggerEl: document.querySelector('#vipdefault-tab'),
                         targetEl: document.querySelector('#vipdefault-panel'),
-                    },
-                    {
-                        id: 'weeklybonus',
-                        triggerEl: document.querySelector('#weeklybonus-tab'),
-                        targetEl: document.querySelector('#weeklybonus-panel'),
-                    },
-                    {
-                        id: 'monthlybonus',
-                        triggerEl: document.querySelector('#monthlybonus-tab'),
-                        targetEl: document.querySelector('#monthlybonus-panel'),
-                    },
-                    {
-                        id: 'annualbonus',
-                        triggerEl: document.querySelector('#annualbonus-tab'),
-                        targetEl: document.querySelector('#annualbonus-panel'),
                     },
                 ];
 

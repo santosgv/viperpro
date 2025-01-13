@@ -9,16 +9,56 @@
 
 ## Viper Pro
 
-Viperpro é um projeto de código aberto desenvolvido em PHP utilizando o Framework Laravel 10 e Vue 3,
+>Viperpro é um projeto de código aberto desenvolvido em PHP utilizando o Framework Laravel 10 e Vue 3,
 com várias integrações com diferentes provedores de iGaming. Este projeto é destinado para fins de estudo.
 Use-o com responsabilidade e consciência, e não o utilize para fins fraudulentos. 
 
+## ATUALIZAÇÔES
+### Versão 1.6.0
+
+### SISTEMA DE VIP
+
+#### O que é?
+O **Sistema VIP** foi reformulado e agora possui uma mecânica que contabiliza bônus com base na quantidade de pontos VIP. Esses pontos são acumulados de acordo com as definições de multiplicação estabelecidas na seção Configurações/Bônus VIP, onde cada ponto é equivalente a 1 real depositado.
+
+#### Como funciona?
+O **Sistema VIP** é uma mecânica de bônus promocional oferecida aos jogadores, permitindo definir um valor de bônus para cada quantidade de pontos acumulados.
+
+#### Implementação
+Para integrar facilmente, adicione o seguinte trecho de código no método de finalização de pagamento.
+```php
+ \App\Helpers\Core::payBonusVip($wallet, $price);
+```
+
+### HISTÓRICO DE AÇÃO
+Foi criado um novo módulo que permite monitorar detalhadamente as ações no seu painel administrativo. Dessa forma, você terá um relatório completo das atividades da sua equipe.
+
+Coloque o código abaixo onde deseja monitorar
+```php
+ \App\Helpers\Core::CreateReport($action, $description)
+```
+
+### DETALHES PARA AFILIADOS
+Agora, quando o administrador visualiza um usuário, ele pode ver detalhes das indicações, como depósitos (confirmados ou pendentes) e suas quantidades, tanto do afiliado quanto dos indicados.
+
+<hr>
+
+### 1.5.2
+* Detalhes de usuário foram melhorados, agora você pode ver a lista de depositos de indicações.
+* Pasta do Filamentphp foi organizada, e também seus namespaces.
+
+<hr>
+
+#
+
 ## CUIDADO COM UM NOVO GOLPISTA
-Eu há um tempo após alguns haters, mudei o meu usuário do instagram, porem não sei como fizeram isso, pra mim não era possivel, alguem trocou pegou o mesmo usuário meu anterior. Já denunciei, e peço a vocês que façam o mesmo, por que esse bandido está dando inumeros golpes utilizando meu nome e meu produto.
+**Eu há um tempo após alguns haters, mudei o meu usuário do instagram, porem não sei como fizeram isso, pra mim não era
+possivel, alguem trocou, pegou o mesmo usuário meu anterior. Já denunciei, e peço a vocês que façam o mesmo, por que esse
+bandido está dando inumeros golpes utilizando meu nome e meu produto.**
 
 ESSE PERFIL NÂO SOU EU. DENUNCIEM!!!
 
-https://www.instagram.com/victormsalatiel
+https://www.instagram.com/venixplataformas
 
 Recursos:
 
@@ -72,6 +112,12 @@ Agora, na confirmação de depósito pelo webhook, realizamos uma verificação 
 
 3. Webhook automaticado
 Agora o webhook da digitopay é automaticamente configurado.
+
+> Login de acesso ao admin:
+> 
+> Login: admin@demo.com
+> 
+> Senha: 123456
 
 
 ## [VIPER PRO 2.0](https://viper.casino/)

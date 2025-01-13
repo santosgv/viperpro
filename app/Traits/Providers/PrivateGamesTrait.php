@@ -14,7 +14,7 @@ trait PrivateGamesTrait
     use MissionTrait;
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param string $token
      * @param array $settingGame
      * @param array $iconData
@@ -83,7 +83,7 @@ trait PrivateGamesTrait
 
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param string $token
      * @param array $settingGame
      * @param array $pull
@@ -208,7 +208,7 @@ trait PrivateGamesTrait
     }
 
     /**
-     * @dev victormsalatiel - Corra de golpista, me chame no instagram
+     * @dev venixplataformas - Corra de golpista, me chame no instagram
      * @param $request
      * @param $token
      * @return JsonResponse|void

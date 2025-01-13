@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 25/05/2024 02:17:08
+ Date: 13/08/2024 17:32:47
 */
 
 SET NAMES utf8mb4;
@@ -39,11 +39,13 @@ CREATE TABLE `affiliate_histories`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `affiliate_histories_user_id_index`(`user_id`) USING BTREE,
   INDEX `affiliate_histories_inviter_index`(`inviter`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of affiliate_histories
 -- ----------------------------
+INSERT INTO `affiliate_histories` VALUES (1, 40, 1, 20.00, 'revshare', 0, 0.00, 0, 0.00, 0.00, 0, '2024-08-02 13:40:09', '2024-08-02 13:40:09', NULL);
+INSERT INTO `affiliate_histories` VALUES (2, 40, 1, 10.00, 'cpa', 0, 0.00, 0, 0.00, 0.00, 0, '2024-08-02 13:40:09', '2024-08-02 13:40:09', NULL);
 
 -- ----------------------------
 -- Table structure for affiliate_withdraws
@@ -92,10 +94,10 @@ CREATE TABLE `banners`  (
 -- ----------------------------
 INSERT INTO `banners` VALUES (12, NULL, '01HN3AKDHVEN6TQ36QF8B0RD5G.png', 'home', '...', '2024-01-26 13:45:43', '2024-01-26 13:45:43');
 INSERT INTO `banners` VALUES (13, NULL, '01HN3AM094CHA78JMNA1WFJQ48.png', 'home', '....', '2024-01-26 13:46:03', '2024-01-26 13:46:03');
-INSERT INTO `banners` VALUES (11, '#', '01HM2CEPQT5YXBSQWZB11FPCCG.png', 'carousel', '....', '2024-01-13 18:43:10', '2024-01-13 18:43:10');
-INSERT INTO `banners` VALUES (10, '#', '01HM2CC9B28CCH6NEF4F23S027.png', 'carousel', '...', '2024-01-13 18:41:51', '2024-01-13 18:41:51');
-INSERT INTO `banners` VALUES (9, '#', '01HM2CBKXAJFT487P5WJWVXATD.png', 'carousel', '...', '2024-01-13 18:41:29', '2024-01-13 18:41:29');
-INSERT INTO `banners` VALUES (8, '#', '01HM2CB15JXRW3GKSJJW83F64C.png', 'carousel', '...', '2024-01-13 18:41:09', '2024-01-13 18:41:09');
+INSERT INTO `banners` VALUES (11, '#', '01J56F0P92C3304N767PCX16F3.png', 'carousel', '....', '2024-01-13 18:43:10', '2024-08-13 15:11:45');
+INSERT INTO `banners` VALUES (10, '#', '01J56F0K86G2HXN898SSMT3J60.webp', 'carousel', '...', '2024-01-13 18:41:51', '2024-08-13 15:11:42');
+INSERT INTO `banners` VALUES (9, '#', '01J56F0HBS6X3BJ3GWAMWJR7RJ.png', 'carousel', '...', '2024-01-13 18:41:29', '2024-08-13 15:11:40');
+INSERT INTO `banners` VALUES (8, '#', '01J56EZK8CT3S95HAP6Z8D5649.png', 'carousel', '...', '2024-01-13 18:41:09', '2024-08-13 15:11:09');
 INSERT INTO `banners` VALUES (14, NULL, '01HN3ANKG0HVN2Z6XKN93Z4ZH9.png', 'home', '...', '2024-01-26 13:46:55', '2024-01-26 13:46:55');
 
 -- ----------------------------
@@ -112,7 +114,7 @@ CREATE TABLE `categories`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `casino_categories_slug_unique`(`slug`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of categories
@@ -390,11 +392,18 @@ CREATE TABLE `deposits`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `deposits_user_id_foreign`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of deposits
 -- ----------------------------
+INSERT INTO `deposits` VALUES (1, '26565654654', 1, 109.00, 'deposit', NULL, 1, 'BRL', 'R$', '2024-08-02 13:25:47', NULL);
+INSERT INTO `deposits` VALUES (2, '56654656546', 1, 100.00, 'deposit', NULL, 0, 'BRL ', 'R$', '2024-08-02 13:26:08', NULL);
+INSERT INTO `deposits` VALUES (3, '55665465654', 1, 37.00, 'deposit', NULL, 1, 'BRL', 'R$', NULL, NULL);
+INSERT INTO `deposits` VALUES (4, '55685565666', 40, 32.00, 'deposit', NULL, 1, 'BRL', 'R$', NULL, NULL);
+INSERT INTO `deposits` VALUES (5, '56566565655', 40, 19.00, 'deposit', NULL, 1, 'BRL', 'R$', NULL, NULL);
+INSERT INTO `deposits` VALUES (6, '546465645', 40, 40.00, 'deposit', NULL, 0, 'BRL', 'R$', NULL, NULL);
+INSERT INTO `deposits` VALUES (7, '45665654654', 40, 15.00, 'deposit', NULL, 1, 'BRL', 'R$', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for digito_pay_payments
@@ -527,7 +536,7 @@ CREATE TABLE `games`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `games_provider_id_index`(`provider_id`) USING BTREE,
   INDEX `games_game_code_index`(`game_code`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 12034 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of games
@@ -739,7 +748,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 98 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of migrations
@@ -835,6 +844,7 @@ INSERT INTO `migrations` VALUES (94, '2024_03_30_215051_add_social_to_custom_lay
 INSERT INTO `migrations` VALUES (95, '2024_03_30_225900_create_digito_pay_payments_table', 64);
 INSERT INTO `migrations` VALUES (96, '2024_03_30_225929_add_digitopay_to_gateways_table', 64);
 INSERT INTO `migrations` VALUES (97, '2024_03_31_124211_add_digitopay_to_settings_table', 65);
+INSERT INTO `migrations` VALUES (98, '2024_08_05_170433_create_reports_table', 66);
 
 -- ----------------------------
 -- Table structure for mission_users
@@ -1083,11 +1093,36 @@ CREATE TABLE `providers`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 141 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of providers
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for reports
+-- ----------------------------
+DROP TABLE IF EXISTS `reports`;
+CREATE TABLE `reports`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int UNSIGNED NOT NULL,
+  `description` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_url` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_action` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of reports
+-- ----------------------------
+INSERT INTO `reports` VALUES (1, 1, 'O Admin Admin atualizou o saldo do usuário do Id: 41 no valor de R$ 100.00', 'http://viperprogithub.test/livewire/update', 'Atualizou Saldo', '2024-08-05 17:29:57', '2024-08-05 17:29:57');
+INSERT INTO `reports` VALUES (2, 1, 'O Admin Admin atualizou um usuário', 'http://viperprogithub.test/admin/logout', 'Atualizou', '2024-08-05 23:14:31', '2024-08-05 23:14:31');
+INSERT INTO `reports` VALUES (3, 52, 'Novo usuário cadastrado do id: 52', 'http://viperprogithub.test/api/auth/register', 'Cadastrado', '2024-08-05 23:43:20', '2024-08-05 23:43:20');
+INSERT INTO `reports` VALUES (4, 53, 'Novo usuário cadastrado do id: 53', 'http://viperprogithub.test/api/auth/register', 'Cadastrado', '2024-08-05 23:54:40', '2024-08-05 23:54:40');
+INSERT INTO `reports` VALUES (5, 54, 'Novo usuário cadastrado do id: 50', 'http://viperprogithub.test/api/auth/register', 'Cadastrado', '2024-08-06 00:06:14', '2024-08-06 00:06:14');
+INSERT INTO `reports` VALUES (6, 1, 'Novo usuário cadastrado do id: 1', 'http://viperprogithub.test/api/auth/login', 'Cadastrado', '2024-08-13 16:02:21', '2024-08-13 16:02:21');
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -1329,12 +1364,27 @@ CREATE TABLE `users`  (
   `role_id` int NULL DEFAULT 3,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 55 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Admin', 'admin@demo.com', NULL, '$2y$10$sq4gZjSHoI4Jk4yEthM5Cua/yVoFac6nTpRsTy7v9ayXAvKLHHrsq', 'Tb5Z4Br9ksYmvy4r0do0m0szYI2m5I2bXZo0uddrZquyzvzNRimd0yveUxaH', '2023-11-07 22:15:13', '2024-03-31 15:51:21', NULL, NULL, 'uploads/8lx3OeL0c6GX18GMIhbgf2Kj4JVew0NRmnTUYYSb.png', NULL, NULL, '(31) 98690-4249', 0, 0, NULL, 'IL9O93HOCY', 20, NULL, 10.00, 40.00, 0, 'active', 'pt_BR', 1);
+INSERT INTO `users` VALUES (1, 'Admin', 'admin@demo.com', NULL, '$2y$10$sq4gZjSHoI4Jk4yEthM5Cua/yVoFac6nTpRsTy7v9ayXAvKLHHrsq', 'YQbRDY7ZqR60Iajs50pv5o6mNNLjyUgqOgIyEWuusltzvrYaGNlkE5nkdzn3', '2023-11-07 22:15:13', '2024-03-31 15:51:21', NULL, NULL, 'uploads/8lx3OeL0c6GX18GMIhbgf2Kj4JVew0NRmnTUYYSb.png', NULL, NULL, '(31) 98690-4249', 0, 0, NULL, 'IL9O93HOCY', 20, NULL, 10.00, 40.00, 0, 'active', 'pt_BR', 1);
+INSERT INTO `users` VALUES (40, 'Jose', 'josepedro@gmail.com', NULL, '$2y$10$wxDpf3w2QbJfpZ1gfH3VjO2SB7ODJw2.hdrom9Goz84CrgZwCq.Fa', NULL, '2024-08-02 13:40:09', '2024-08-02 13:40:09', NULL, NULL, NULL, NULL, '11111111111111111', '11111111111', 0, 0, 1, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (41, 'Demo', 'demo@gmail.com', NULL, '$2y$10$ohA5ZrNuLHBWhjTLG3EGZuBpRu4RMpNy3MKdeG0QBe62n12HX4jYS', NULL, '2024-08-05 23:13:06', '2024-08-05 23:13:06', NULL, NULL, NULL, NULL, '829.793.830-15', '11111111111', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (42, 'Fernando', 'fernando@demo.com', NULL, '$2y$10$5vl0OyX.mCgelSt23yQlJO2rK4fkjZ7QEB.8s393TCh0st5buurtm', NULL, '2024-08-05 23:15:15', '2024-08-05 23:15:15', NULL, NULL, NULL, NULL, NULL, '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (43, 'Lucas', 'lucassouza@gmail.com', NULL, '$2y$10$WBpODgoJeE1OqgRgwiBkOOiAobEmDOEizGegY7.Nsf/NzP3sX9/Qy', NULL, '2024-08-05 23:34:59', '2024-08-05 23:34:59', NULL, NULL, NULL, NULL, '1111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (44, 'Lucas', 'lucasso32suza@gmail.com', NULL, '$2y$10$3LYW35Mh4LlB9/MKnqrCoe.FEev7/xQN7.pdjF.L7U7Xo.DuFi8hS', NULL, '2024-08-05 23:35:30', '2024-08-05 23:35:30', NULL, NULL, NULL, NULL, '1111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (45, 'Lucas', 'lucasso32sdfsdsuza@gmail.com', NULL, '$2y$10$9wTDRAEUCT9ahxXGjwth.ehsFLVdhsaJSMnjAeYXH2snKAsPSwYPW', NULL, '2024-08-05 23:35:51', '2024-08-05 23:35:51', NULL, NULL, NULL, NULL, '1111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (46, 'Lucas', 'lucasso32s33dfsdsuza@gmail.com', NULL, '$2y$10$/6KEloE6IAqrsaGN/cYWkuriZkKsrXGydY87sev.czVfVJloWJIl2', NULL, '2024-08-05 23:36:35', '2024-08-05 23:36:35', NULL, NULL, NULL, NULL, '1111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (47, 'Lucas', 'lucasso32s33dfsdsdfsddsuza@gmail.com', NULL, '$2y$10$qVJUDlFjf.H7s73GA3HdA.DeDeLaU58oAAauv5vdUouKvY6irfR3m', NULL, '2024-08-05 23:36:54', '2024-08-05 23:36:54', NULL, NULL, NULL, NULL, '1111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (48, 'asdasd', 'asdasd@gmail.com', NULL, '$2y$10$Og4nZPX2Nl7jr3mZhujeNe6d8oEbmvddIItk7tH6Wntt3x4o4TsFS', NULL, '2024-08-05 23:37:45', '2024-08-05 23:37:45', NULL, NULL, NULL, NULL, '41111111111111111', '3333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (49, 'asdassdfsdd', 'asdafsadsdasd@gmail.com', NULL, '$2y$10$g0lLPuPgUcYNKleaYxTT5.dDCc1hBI8ZavRUHoIqhhYx0OUuHaJnm', NULL, '2024-08-05 23:38:01', '2024-08-05 23:38:01', NULL, NULL, NULL, NULL, '41111111111111111', '3333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (50, 'Defsadf', 'sdfsdsdfg@gmail.com', NULL, '$2y$10$CWUhXEYMG8a4.FlMolua3.HerfECgSzqdU6mMwVAp4dzCosDVSltu', NULL, '2024-08-05 23:40:18', '2024-08-05 23:40:18', NULL, NULL, NULL, NULL, '2222222222222', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (51, 'asdasdasds', 'asaffds@gmail.com', NULL, '$2y$10$gV6IVE8S42w22NFbN5GdPu14fBpSd0mI/c08ic2pWYYOfP6s2a8NC', NULL, '2024-08-05 23:40:59', '2024-08-05 23:40:59', NULL, NULL, NULL, NULL, '1111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (52, 'defwerf', 'defwerf@gmail.com', NULL, '$2y$10$VPHY5U3vmnaq9v8ZEuL0DO7EBatITffc4MHFe0gAZhOet.cLLE8vu', NULL, '2024-08-05 23:43:20', '2024-08-05 23:43:20', NULL, NULL, NULL, NULL, '11111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (53, 'Usuário teste', 'usuarioteste@gmail.com', NULL, '$2y$10$ZESZJOcqWrrGWMw/1PnpwOOS0FVChtNBfuQoj9W4h1bOCWkCmfPXy', NULL, '2024-08-05 23:54:40', '2024-08-05 23:54:40', NULL, NULL, NULL, NULL, '111111111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
+INSERT INTO `users` VALUES (54, 'Jose Bezera', 'josebezerra@demo.com', NULL, '$2y$10$n7JYlwW0BTo9dPBUjzVQgOB8ezvA/1Z5IIwym6BXQ9izJmQY2lgXC', NULL, '2024-08-06 00:06:14', '2024-08-06 00:06:14', NULL, NULL, NULL, NULL, '11111111111111', '33333333333', 0, 0, NULL, NULL, 20, NULL, 50.00, 50.00, 0, 'active', 'pt_BR', 3);
 
 -- ----------------------------
 -- Table structure for vip_users
@@ -1372,11 +1422,14 @@ CREATE TABLE `vips`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of vips
 -- ----------------------------
+INSERT INTO `vips` VALUES (1, '01J56G2APCF1555CJF7JA507BS.png', 1, 200, NULL, 5, '2024-08-13 15:26:26', '2024-08-13 15:52:41');
+INSERT INTO `vips` VALUES (2, '01J56G3CFTXJ2WY265BNNHVSKS.png', 2, 500, NULL, 15, '2024-08-13 15:26:50', '2024-08-13 15:52:58');
+INSERT INTO `vips` VALUES (3, '01J56G4AAW3MWXZ1H7924Y2XMZ.png', 3, 1000, NULL, 50, '2024-08-13 15:31:12', '2024-08-13 15:53:39');
 
 -- ----------------------------
 -- Table structure for wallet_changes
@@ -1433,13 +1486,22 @@ CREATE TABLE `wallets`  (
   `vip_points` bigint NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `wallets_user_id_index`(`user_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of wallets
 -- ----------------------------
-INSERT INTO `wallets` VALUES (1, 1, 'BRL', 'R$', 100.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 5900.00, 0, 1, '2023-11-07 22:15:13', '2024-03-05 15:03:54', 0.00, 0, 0, 0, 0, 1, 10000);
-INSERT INTO `wallets` VALUES (39, 38, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-03-30 19:18:30', '2024-03-30 19:18:30', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (1, 1, 'BRL', 'R$', 200.00, 0.00, 0.00, 0.00, 160.00, 0.00000000, 1000.00000000, 5900.00, 0, 1, '2023-11-07 22:15:13', '2024-08-13 17:00:06', 0.00, 0, 0, 0, 0, 2, 500);
+INSERT INTO `wallets` VALUES (42, 41, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:13:06', '2024-08-05 23:13:06', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (41, 40, 'BRL', 'R$', 100.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-02 13:40:09', '2024-08-05 17:29:57', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (43, 42, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:15:15', '2024-08-05 23:15:15', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (44, 47, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:36:54', '2024-08-05 23:36:54', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (45, 49, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:38:01', '2024-08-05 23:38:01', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (46, 50, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:40:18', '2024-08-05 23:40:18', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (47, 51, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:40:59', '2024-08-05 23:40:59', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (48, 52, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:43:20', '2024-08-05 23:43:20', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (49, 53, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-05 23:54:40', '2024-08-05 23:54:40', 0.00, 0, 0, 0, 0, 0, 0);
+INSERT INTO `wallets` VALUES (50, 54, 'BRL', 'R$', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00000000, 1000.00000000, 0.00, 0, 1, '2024-08-06 00:06:14', '2024-08-06 00:06:14', 0.00, 0, 0, 0, 0, 0, 0);
 
 -- ----------------------------
 -- Table structure for websockets_statistics_entries

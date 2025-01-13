@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |Sme
 */
+Route::get('/test', function() {
+   $wallet = \App\Models\Wallet::find(1);
+   $price = 5;
+
+   \App\Helpers\Core::payBonusVip($wallet, $price);
+
+});
 Route::get('clear', function() {
     Artisan::command('clear', function () {
         Artisan::call('optimize:clear');

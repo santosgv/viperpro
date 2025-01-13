@@ -27,13 +27,25 @@
                         {{ $t('Level') }} {{ vip.bet_level }}
                     </th>
                     <td class="px-6 py-4">
-                        <i class="fa-sharp fa-light fa-coins mr-2"></i> {{ vip.bet_required }}
+                        <p><i class="fa-sharp fa-light fa-coins mr-2"></i> {{ vip.bet_required }}</p>
+                        <p>
+                            <div class="relative w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                                <div
+                                    class="bg-gray-600 h-5 rounded-lg text-center justify-center text-white text-xs py-1"
+                                    :style="{ width: getProgress(vip.bet_required) + '%' }"
+                                >
+                                </div>
+                                <span class="absolute top-0" style="left: 50%">
+                                    {{ vipPoints >= vip.bet_required ? 'Concluído' : `${vipPoints} / ${vip.bet_required}` }}
+                                </span>
+                            </div>
+                        </p>
                     </td>
                     <td class="px-6 py-4">
                         <i class="fa-regular fa-circle-dollar mr-2"></i> {{ vip.bet_bonus }}
                     </td>
                     <td>
-                        <img v-if="parseInt(vipPoints) > parseInt(vip?.bet_required ?? 0)" :src="`/assets/images/trophy2.png`" alt="" width="28">
+                        <img v-if="parseInt(vipPoints) >= parseInt(vip?.bet_required ?? 0)" :src="`/assets/images/trophy2.png`" alt="" width="28">
                     </td>
                 </tr>
             </tbody>
@@ -66,7 +78,12 @@ export default {
 
     },
     methods: {
-
+        getProgress(requiredPoints) {
+            if (this.vipPoints >= requiredPoints) {
+                return 100;
+            }
+            return (this.vipPoints / requiredPoints) * 100;
+        }
     },
     async created() {
 

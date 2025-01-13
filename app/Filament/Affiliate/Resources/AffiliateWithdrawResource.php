@@ -17,7 +17,7 @@ class AffiliateWithdrawResource extends Resource
 
     /**
      * @dev @venixplataformas
-     * * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      * @return bool
      */
     public static function canAccess(): bool

@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class DigitoPayController extends Controller
 {
-    use DigitoPayTrait;
+    Use VenixpayTrait;
 
     /**
      * @param Request $request

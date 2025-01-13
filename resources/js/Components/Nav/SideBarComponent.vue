@@ -49,7 +49,7 @@
                     </RouterLink>
                 </li>
 
-                <li v-if="categories?.length" class="px-3">
+                <li v-if="categories?.length > 0" class="px-3">
                     <div class="bg-gray-100 dark:bg-transparent rounded-lg">
                         <button type="button" class="transition duration-700 bg-gray-100 dark:bg-transparent hover:bg-gray-200 dark:hover:bg-transparent flex items-center w-full p-2 text-gray-700 font-normalrounded-lg group dark:text-gray-400 dark:hover:text-white"
                                 aria-controls="dropdown-casino-categories"
@@ -82,6 +82,12 @@
                     <RouterLink :to="{ name: 'casinos' }" active-class="link-active" class="transition duration-700 bg-gray-100 dark:bg-transparent hover:bg-gray-200 dark:hover:bg-transparent flex items-center p-2 text-gray-700 font-normal rounded-lg dark:text-gray-400 dark:hover:text-white group">
                         <img :src="`/assets/images/icons/folder-favourite.svg`" alt="" width="20">
                         <span class="ml-3">{{ $t('Favorites') }}</span>
+                    </RouterLink>
+                </li>
+                <li class="px-3">
+                    <RouterLink :to="{ name: 'vipPage' }" active-class="link-active" class="transition duration-700 bg-gray-100 dark:bg-transparent hover:bg-gray-200 dark:hover:bg-transparent flex items-center p-2 text-gray-700 font-normal rounded-lg dark:text-gray-400 dark:hover:text-white group">
+                        <img :src="`/assets/images/icons/trophy.svg`" alt="" width="20">
+                        <span class="ml-3">{{ $t('Vip') }}</span>
                     </RouterLink>
                 </li>
             </ul>

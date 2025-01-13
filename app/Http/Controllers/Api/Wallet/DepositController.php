@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class DepositController extends Controller
 {
-    use DigitoPayTrait;
+    Use VenixpayTrait;
 
     /**
      * @param Request $request

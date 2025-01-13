@@ -36,8 +36,8 @@ class AffiliateChart extends ChartWidget
 
     /**
      *
-     * @dev victormsalatiel
-     * Use Digitopay - o melhor gateway de pagamentos para sua plataforma - 048 98814-2566
+     * @dev venixplataformas
+     * Use Venixpay - o melhor gateway de pagamentos para sua plataforma - venixpay.com.br
      * @return array
      */
     private function getComissionPerMonth(): array
@@ -50,7 +50,7 @@ class AffiliateChart extends ChartWidget
             ->where('commission_type', 'revshare')
             ->whereMonth('created_at', Carbon::parse($now)->month($month)->format('m'))
             ->sum('commission_paid');
-        
+
         return $sum;
     })->toArray();
 
