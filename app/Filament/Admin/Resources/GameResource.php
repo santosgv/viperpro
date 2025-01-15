@@ -112,12 +112,6 @@ class GameResource extends Resource
                             ->label('Tecnologia')
                             ->placeholder('Digite a Tecnologia do jogo, exemplo: html, java, construct 3')
                             ->maxLength(191),
-                        Forms\Components\TextInput::make('rtp')
-                            ->label('RTP')
-                            ->placeholder('Digite o RTP do jogo')
-                            ->required()
-                            ->numeric()
-                            ->default(90),
                         Forms\Components\Select::make('distribution')
                             ->label('Distribuição')
                             ->placeholder('Selecione a distribuição')
@@ -230,11 +224,6 @@ class GameResource extends Resource
                 Tables\Columns\ToggleColumn::make('only_demo')
                     ->label('Demo')
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('rtp')
-                    ->label('RTP')
-                    ->suffix('%')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('distribution')
                     ->label('Distribuição')
                     ->badge(),

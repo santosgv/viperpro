@@ -18,7 +18,7 @@ class SettingMailPage extends Page
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.pages.setting-mail-page';
+    protected static string $view = 'filament.admin.pages.setting-mail-page';
 
     public ?array $data = [];
     public SettingMail $setting;

@@ -24,7 +24,7 @@ class ChangePasswordUser extends Page implements HasForms
 
     protected static string $resource = UserResource::class;
 
-    protected static string $view = 'filament.resources.user-resource.pages.change-password-user';
+    protected static string $view = 'filament.admin.resources.user-resource.pages.change-password-user';
 
     protected static ?string $title = 'Alterar Senha';
 

@@ -50,7 +50,7 @@ class User extends Authenticatable implements FilamentUser, JWTSubject
                 \Helper::CreateReport('Apagou', 'O Admin '. auth()->user()->name . ' apagou um usuário');
             }
 
-            $this->deleteAll($model);
+            self::deleteAll($model);
         });
     }
 
@@ -58,7 +58,7 @@ class User extends Authenticatable implements FilamentUser, JWTSubject
      * @param $user
      * @return void
      */
-    public function deleteAll($user)
+    public static function deleteAll($user)
     {
         $wallet = Wallet::find($user->id);
         if(!empty($wallet)) {

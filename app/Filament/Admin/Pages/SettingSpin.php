@@ -17,7 +17,7 @@ class SettingSpin extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.pages.setting-spin';
+    protected static string $view = 'filament.admin.pages.setting-spin';
 
     /**
      * @dev @venixplataformas

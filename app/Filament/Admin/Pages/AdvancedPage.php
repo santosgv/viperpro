@@ -22,7 +22,7 @@ class AdvancedPage extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.pages.advanced-page';
+    protected static string $view = 'filament.admin.pages.advanced-page';
 
     protected static ?string $navigationLabel = 'Opções Avançada';
 

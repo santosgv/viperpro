@@ -17,7 +17,7 @@ class GatewayPage extends Page
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.pages.gateway-page';
+    protected static string $view = 'filament.admin.pages.gateway-page';
 
     public ?array $data = [];
     public Gateway $setting;
@@ -53,6 +53,20 @@ class GatewayPage extends Page
     {
         return $form
             ->schema([
+                Section::make('Sharkpay')
+                    ->description('Ajustes de credenciais para a Sharkpay: https://www.sharkpay.com.br')
+                    ->schema([
+                        TextInput::make('shark_public_key')
+                            ->label('Public Key')
+                            ->placeholder('Digite o Client ID')
+                            ->maxLength(191)
+                            ->columnSpanFull(),
+                        TextInput::make('shark_private_key')
+                            ->label('Private Key')
+                            ->placeholder('Digite a Private Key')
+                            ->maxLength(191)
+                            ->columnSpanFull(),
+                    ]),
                 Section::make('DigitoPay')
                     ->description('Ajustes de credenciais para a DigitoPay')
                     ->schema([

@@ -21,7 +21,7 @@ class LayoutCssCustom extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.pages.layout-css-custom';
+    protected static string $view = 'filament.admin.pages.layout-css-custom';
 
     protected static ?string $navigationLabel = 'Customização Layout';
 

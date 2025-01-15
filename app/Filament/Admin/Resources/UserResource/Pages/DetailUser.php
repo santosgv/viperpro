@@ -17,7 +17,7 @@ class DetailUser extends Page
 
     protected static string $resource = UserResource::class;
 
-    protected static string $view = 'filament.resources.user-resource.pages.detail-user';
+    protected static string $view = 'filament.admin.resources.user-resource.pages.detail-user';
 
     public User $record;
     public ?array $data = [];
@@ -53,7 +53,7 @@ class DetailUser extends Page
     {
         return Section::make()
             ->schema([
-                ViewField::make('preview.default')->view('filament.resources.user-resource.pages.detail-info'),
+                ViewField::make('preview.default')->view('filament.admin.resources.user-resource.pages.detail-info'),
             ]);
     }
 

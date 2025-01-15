@@ -32,7 +32,37 @@ Instagram:
 
 https://www.instagram.com/venix.app/
 
+## Login Admin
+> Para acessar o painel de administração, basta acessar a URL que termina com /admin e inserir suas credenciais de acesso.
+> To access the admin panel, simply navigate to the URL ending with /admin and enter your login credentials.
+```php
+E-mail: admin@demo.com
+Senha: 123456
+```
+## Trocando a rota do admin
+
+Se você deseja alterar a rota do painel administrativo, é muito simples: basta acessar o arquivo de configuração correspondente e modificar o caminho desejado.
+```
+app/Providers/Filament/AdminPanelProvider.php
+```
+
+Altere:
+```php
+->id('admin')
+->path('admin')
+```
+
 ## ATUALIZAÇÔES
+### Versão 1.6.1
+Esta versão conta com diversas correções e melhorias, deixando a plataforma totalmente pronta para o seu uso. Já está integrada ao nosso provedor de jogos Venix, com jogos carregados, e também com o gateway de pagamento da Sharkpay, que já está configurado. Basta acessar o site, criar sua conta e dar o start.
+
+This version includes several fixes and improvements, making the platform fully ready for you to start. It is already integrated with our game provider Venix, with games loaded, and the payment gateway from Sharkpay is also configured. Just visit the website, create your account, and get started.
+
+>Caso queiram novos gateway e provedores, fazemos também esse tipo de serviço, consulte em nosso site https://viper.casino
+
+## BAIXEM A VERSÂO RELEASE AO LADO -------------->
+
+
 ### Versão 1.6.0
 
 ### SISTEMA DE VIP
@@ -67,6 +97,22 @@ Agora, quando o administrador visualiza um usuário, ele pode ver detalhes das i
 * Pasta do Filamentphp foi organizada, e também seus namespaces.
 
 <hr>
+
+## Baixar os jogos da Venix Games
+Para baixar nossos jogos, é bem simples. Basta acessar o terminal da sua VPS ou hospedagem e, no diretório do projeto, digitar o comando php artisan venix:games. Você também pode configurar o CRON para isso, seguindo o exemplo abaixo.
+
+Primeiro você precisa configurar a fila, defina no tempo que desejar:
+```
+/usr/bin/php8.3 /home/caminho/artisan queue:work 1>> /dev/null 2>&1
+```
+
+Depois para baixar os jogos, você pode definir uma vez por dia.
+
+```
+/usr/bin/php8.3 /home/caminho/artisan venix:games 1>> /dev/null 2>&1
+```
+[Precisa de recarga? Clique aqui](https://venix.games/)
+
 
 #
 

@@ -28,6 +28,9 @@ class Gateway extends Model
         'digitopay_uri',
         'digitopay_cliente_id',
         'digitopay_cliente_secret',
+
+        'shark_public_key',
+        'shark_private_key',
     ];
 
     protected $hidden = array('updated_at');

@@ -59,6 +59,7 @@ class Setting extends Model
         'initial_bonus',
 
         'digitopay_is_enable',
+        'sharkpay_is_enable',
 
         /// withdrawal limit
         'withdrawal_limit',

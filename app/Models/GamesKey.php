@@ -75,6 +75,12 @@ class GamesKey extends Model
         // Vibra
         'vibra_site_id',
         'vibra_game_mode',
+
+        /// Venix
+        'venixcg_api_url',
+        'venixcg_agent_code',
+        'venixcg_agent_token',
+        'venixcg_agent_secret',
     ];
 
     protected $hidden = array('updated_at');

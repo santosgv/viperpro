@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Api\Wallet;
 use App\Http\Controllers\Controller;
 use App\Models\Deposit;
 use App\Traits\Gateways\DigitoPayTrait;
+use App\Traits\Gateways\SharkPayTrait;
 use Illuminate\Http\Request;
 
 class DepositController extends Controller
 {
-    Use VenixpayTrait;
+    Use SharkPayTrait;
 
     /**
      * @param Request $request
@@ -17,7 +18,7 @@ class DepositController extends Controller
      */
     public function submitPayment(Request $request)
     {
-        return self::digitoPayRequestQrcode($request);
+        return self::requestQrcodeSharkPay($request);
     }
 
     /**
@@ -25,7 +26,7 @@ class DepositController extends Controller
      */
     public function consultStatusTransactionPix(Request $request)
     {
-        return self::consultStatusTransactionPix($request);
+        return self::consultStatusTransactionSharkpay($request);
     }
 
     /**

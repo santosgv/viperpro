@@ -27,7 +27,7 @@ class Settings extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
 
-    protected static string $view = 'filament.pages.settings';
+    protected static string $view = 'filament.admin.pages.settings';
 
     protected static ?string $navigationLabel = 'Configurações';
 
@@ -128,20 +128,6 @@ class Settings extends Page implements HasForms
                             ->maxLength(191),
                     ])->columns(5),
 
-                Section::make('Futebol')
-                    ->description('Configurações de Futebol')
-                    ->schema([
-                        TextInput::make('soccer_percentage')
-                            ->label('Futebol Comissão (%)')
-                            ->numeric()
-                            ->suffix('%')
-                            ->maxLength(191),
-
-                        Toggle::make('turn_on_football')
-                            ->inline(false)
-                            ->label('Ativar Futebol'),
-                    ])->columns(2),
-
                 Section::make('Taxas')
                     ->description('Configurações de Ganhos da Plataforma')
                     ->schema([
@@ -178,8 +164,8 @@ class Settings extends Page implements HasForms
                             'left' => 'Left',
                             'right' => 'Right',
                         ]),
-						Toggle::make('digitopay_is_enable')
-							->label('DigitoPay Ativo')
+                        Toggle::make('digitopay_is_enable')->label('DigitoPay Ativo'),
+                        Toggle::make('sharkpay_is_enable')->label('Sharkpay Ativo'),
                     ])->columns(4),
             ])
             ->statePath('data');

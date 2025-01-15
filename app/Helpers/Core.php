@@ -323,6 +323,7 @@ class Core
     public static function getDistribution(): array
     {
         return [
+            'venixcg' => 'Venix Games',
             'source' => 'Código Fonte',
             'evergame' => 'Evergame',
             'playgaming' => 'Play Gaming',
@@ -995,7 +996,8 @@ class Core
                 'min_withdrawal',
                 'max_withdrawal',
                 'initial_bonus',
-                'digitopay_is_enable'
+                'digitopay_is_enable',
+                'sharkpay_is_enable'
             )->first();
 
             Cache::put('setting', $setting);

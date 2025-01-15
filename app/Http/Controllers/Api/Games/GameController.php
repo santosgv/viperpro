@@ -15,6 +15,7 @@ use App\Traits\Providers\FiversTrait;
 use App\Traits\Providers\Games2ApiTrait;
 use App\Traits\Providers\PlayGamingTrait;
 use App\Traits\Providers\SalsaGamesTrait;
+use App\Traits\Providers\VenixCGTrait;
 use App\Traits\Providers\VeniXTrait;
 use App\Traits\Providers\VibraTrait;
 use App\Traits\Providers\WorldSlotTrait;
@@ -29,7 +30,8 @@ class GameController extends Controller
         Games2ApiTrait,
         VeniXTrait,
         EvergameTrait,
-        PlayGamingTrait;
+        PlayGamingTrait,
+        VenixCGTrait;
 
     /**
      * @dev venixplataformas
@@ -173,9 +175,8 @@ class GameController extends Controller
                                 'gameUrl' => url('/originals/'.$game->game_code.'/index.html?token='.$token),
                                 'token' => $token
                             ]);
-                        case 'venix':
-                            $gameLauncher = self::GameLaunchVeniX($game);
-
+                        case 'venixcg':
+                            $gameLauncher = self::GameLaunchVenixCG($game);
                             if($gameLauncher) {
                                 return response()->json([
                                     'game' => $game,
@@ -370,7 +371,7 @@ class GameController extends Controller
      */
     public function webhookVeniXMethod(Request $request)
     {
-        return self::WebhookVeniX($request);
+        return self::WebhookVenixCG($request);
     }
 
     /**

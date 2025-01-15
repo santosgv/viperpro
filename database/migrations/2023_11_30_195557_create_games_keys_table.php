@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('salsa_base_uri')->nullable();
             $table->string('salsa_pn')->nullable();
             $table->string('salsa_key')->nullable();
+
+            $table->string('venixcg_api_url')->nullable();
+            $table->string('venixcg_agent_token')->nullable();
+            $table->string('venixcg_agent_secret')->nullable();
             $table->timestamps();
         });
     }

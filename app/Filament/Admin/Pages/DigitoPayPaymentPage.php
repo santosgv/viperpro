@@ -19,7 +19,7 @@ class DigitoPayPaymentPage extends Page
 
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
 
-    protected static string $view = 'filament.pages.digitopay-payment-page';
+    protected static string $view = 'filament.admin.pages.digitopay-payment-page';
 
     protected static ?string $navigationLabel = 'DigitoPay Pagamentos';
 
