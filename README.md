@@ -22,7 +22,7 @@ Use it responsibly and ethically, and do not use it for fraudulent activities.
 </div>
 
 ## PLATAFORMAS DE QUALIDADES
->Se você busca plataformas de qualidade com excelente custo-benefício, acesse nosso site! Lá, você encontrará soluções completas e avançadas, incluindo documentação detalhada. 
+>Se você busca plataformas de qualidade com excelente custo-benefício, acesse o site! Lá, você encontrará soluções completas e avançadas, incluindo documentação detalhada. 
 E o melhor: ao adquirir o código-fonte, você ganha 90 dias de suporte gratuito. Aproveite!
 
 >If you're looking for high-quality platforms with excellent cost-effectiveness, visit our website! There, you'll find complete and advanced solutions, including detailed documentation.
@@ -58,11 +58,11 @@ Altere:
 
 ## ATUALIZAÇÔES
 ### Versão 1.6.1
-Esta versão conta com diversas correções e melhorias, deixando a plataforma totalmente pronta para o seu uso. Já está integrada ao nosso provedor de jogos Venix, com jogos carregados, e também com o gateway de pagamento da Sharkpay, que já está configurado. Basta acessar o site, criar sua conta e dar o start.
+Esta versão conta com diversas correções e melhorias, deixando a plataforma totalmente pronta para o seu uso. Já está integrada ao provedor de jogos Venix, com jogos carregados, e também com o gateway de pagamento da Sharkpay, que já está configurado. Basta acessar o site, criar sua conta e dar o start.
 
 This version includes several fixes and improvements, making the platform fully ready for you to start. It is already integrated with our game provider Venix, with games loaded, and the payment gateway from Sharkpay is also configured. Just visit the website, create your account, and get started.
 
->Caso queiram novos gateway e provedores, fazemos também esse tipo de serviço, consulte em nosso site https://viper.casino
+>Caso queiram novos gateway e provedores, fazemos também esse tipo de serviço, consulte no site https://viper.casino
 
 ## BAIXEM A VERSÂO RELEASE AO LADO -------------->
 
@@ -103,7 +103,7 @@ Agora, quando o administrador visualiza um usuário, ele pode ver detalhes das i
 <hr>
 
 ## Baixar os jogos da Venix Games
-Para baixar nossos jogos, é bem simples. Basta acessar o terminal da sua VPS ou hospedagem e, no diretório do projeto, digitar o comando php artisan venix:games. Você também pode configurar o CRON para isso, seguindo o exemplo abaixo.
+Para baixar os jogos, é bem simples. Basta acessar o terminal da sua VPS ou hospedagem e, no diretório do projeto, digitar o comando php artisan venix:games. Você também pode configurar o CRON para isso, seguindo o exemplo abaixo.
 
 Primeiro você precisa configurar a fila, defina no tempo que desejar:
 ```
@@ -151,7 +151,7 @@ https://www.instagram.com/victormsalatiel
 
 Muitas pessoas buscam desenvolvedores para trabalhar em projetos e acabam sendo vítimas de golpes. 
 Ao procurar um programador, solicite referências e um portfólio para garantir a segurança e a qualidade do serviço. Ou
-Solicite um orçamento com nossos [Desenvolvedores Oficiais](https://viper.casino/)
+Solicite um orçamento com os [Desenvolvedores Oficiais](https://viper.casino/)
 
 ## Melhorias e Correções
 
