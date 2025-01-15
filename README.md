@@ -17,6 +17,10 @@ Use-o com responsabilidade e consciência, e não o utilize para fins fraudulent
 featuring multiple integrations with different iGaming providers. This project is intended for educational purposes.
 Use it responsibly and ethically, and do not use it for fraudulent activities.
 
+<div align="center">
+  <img src="https://i.postimg.cc/ZYy3qz0R/01.jpg" alt="Descrição da imagem" />
+</div>
+
 ## PLATAFORMAS DE QUALIDADES
 >Se você busca plataformas de qualidade com excelente custo-benefício, acesse nosso site! Lá, você encontrará soluções completas e avançadas, incluindo documentação detalhada. 
 E o melhor: ao adquirir o código-fonte, você ganha 90 dias de suporte gratuito. Aproveite!
@@ -113,7 +117,10 @@ Depois para baixar os jogos, você pode definir uma vez por dia.
 ```
 [Precisa de recarga? Clique aqui](https://venix.games/)
 
+## Conta do Gateway Sharkpay
+Criar uma conta na Sharkpay é muito fácil. Basta acessar o site e completar o cadastro em poucos passos.
 
+[Clique aqui](https://www.sharkpay.com.br/)
 #
 
 ## CUIDADO COM UM NOVO GOLPISTA
