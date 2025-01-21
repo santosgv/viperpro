@@ -28,9 +28,9 @@ E o melhor: ao adquirir o código-fonte, você ganha 90 dias de suporte gratuito
 >If you're looking for high-quality platforms with excellent cost-effectiveness, visit our website! There, you'll find complete and advanced solutions, including detailed documentation.
 And the best part: when you purchase the source code, you get 90 days of free support. Take advantage of it!
 
-Site Oficial:
+Contato Oficial:
 
-https://viper.casino 
+https://wa.me/37256054826
 
 Instagram:
 
@@ -62,7 +62,7 @@ Esta versão conta com diversas correções e melhorias, deixando a plataforma t
 
 This version includes several fixes and improvements, making the platform fully ready for you to start. It is already integrated with our game provider Venix, with games loaded, and the payment gateway from Sharkpay is also configured. Just visit the website, create your account, and get started.
 
->Caso queiram novos gateway e provedores, fazemos também esse tipo de serviço, consulte no site https://viper.casino
+>Caso queiram novos gateway e provedores, fazemos também esse tipo de serviço, consulte no whatsapp https://wa.me/37256054826
 
 ## BAIXEM A VERSÂO RELEASE AO LADO -------------->
 
@@ -151,7 +151,7 @@ https://www.instagram.com/victormsalatiel
 
 Muitas pessoas buscam desenvolvedores para trabalhar em projetos e acabam sendo vítimas de golpes. 
 Ao procurar um programador, solicite referências e um portfólio para garantir a segurança e a qualidade do serviço. Ou
-Solicite um orçamento com os [Desenvolvedores Oficiais](https://viper.casino/)
+Solicite um orçamento com os [Desenvolvedores Oficiais](https://wa.me/37256054826)
 
 ## Melhorias e Correções
 
@@ -186,12 +186,12 @@ Agora, na confirmação de depósito pelo webhook, realizamos uma verificação 
 Agora o webhook da digitopay é automaticamente configurado.
 
 
-## [VIPER PRO 2.0](https://viper.casino/)
+## [VIPER PRO 2.0](https://wa.me/37256054826)
 O projeto Viper Pro foi totalmente reformulado pela nova equipe Viper, da qual não faço mais parte. No entanto, posso garantir que vocês estão em boas mãos, com os melhores profissionais do iGaming.
 
 SE VOCÊ NÃO É DESENVOLVEDOR E DESEJA UMA PLATAFORMA DE ALTA QUALIDADE, COM ATUALIZAÇÕES E MELHORIAS CONSTANTES, TANTO NO VISUAL QUANTO NO BACKEND, ADQUIRA SUA WHITE LABEL AGORA MESMO.
 
-[COMPRAR AQUI](https://viper.casino/)
+[COMPRAR AQUI](https://wa.me/37256054826)
 
 CLIENTES VIPER PRO V1 NÃO PAGAM PELA LICENÇA NA AQUISIÇÃO DA VIPER PRO 2.0. VALE A PENA MIGRAR, FICOU INCRIVEL
 O NOVO PROJETO.
