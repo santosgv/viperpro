@@ -117,12 +117,6 @@ Depois para baixar os jogos, você pode definir uma vez por dia.
 ```
 [Precisa de recarga? Clique aqui](https://venix.games/)
 
-## Conta do Gateway Sharkpay
-Criar uma conta na Sharkpay é muito fácil. Basta acessar o site e completar o cadastro em poucos passos.
-
-[Clique aqui](https://www.sharkpay.com.br/)
-#
-
 ## CUIDADO COM UM NOVO GOLPISTA
 **Eu há um tempo após alguns haters, mudei o meu usuário do instagram, porem não sei como fizeram isso, pra mim não era
 possivel, alguem trocou, pegou o mesmo usuário meu anterior. Já denunciei, e peço a vocês que façam o mesmo, por que esse
@@ -186,15 +180,47 @@ Agora, na confirmação de depósito pelo webhook, realizamos uma verificação 
 Agora o webhook da digitopay é automaticamente configurado.
 
 
-## [VIPER PRO 2.0](https://wa.me/37256054826)
-O projeto Viper Pro foi totalmente reformulado pela nova equipe Viper, da qual não faço mais parte. No entanto, posso garantir que vocês estão em boas mãos, com os melhores profissionais do iGaming.
+## [VIPER PRO 2.0 e outros MODELOS - VIP](https://wa.me/37256054826)
+O projeto Viper Pro 2.3 foi totalmente reformulado pela nova equipe Viper, da qual não faço mais parte. No entanto, posso garantir que vocês estão em boas mãos, com os melhores profissionais do iGaming.
 
-SE VOCÊ NÃO É DESENVOLVEDOR E DESEJA UMA PLATAFORMA DE ALTA QUALIDADE, COM ATUALIZAÇÕES E MELHORIAS CONSTANTES, TANTO NO VISUAL QUANTO NO BACKEND, ADQUIRA SUA WHITE LABEL AGORA MESMO.
+SE VOCÊ NÃO É DESENVOLVEDOR E DESEJA UMA PLATAFORMA DE ALTA QUALIDADE, COM ATUALIZAÇÕES E MELHORIAS CONSTANTES, TANTO NO VISUAL QUANTO NO BACKEND, ADQUIRA SEU CÓDIGO AGORA MESMO.
+
+## MODELO VIPER 2.0
+
+<a target="_blank" href="https://viperpro2.venixserver.cloud/">
+    <div align="center">
+      <img src="https://uploaddeimagens.com.br/images/004/885/763/full/03.jpg?1742307340" alt="Descrição da imagem" />
+    </div>
+</a>
+
+<a target="_blank" href="https://viperpro2.venixserver.cloud/">
+    <div align="center">
+      <img src="https://uploaddeimagens.com.br/images/004/885/765/full/04.jpg?1742307455" alt="Descrição da imagem" />
+    </div>
+</a>
 
 [COMPRAR AQUI](https://wa.me/37256054826)
 
-CLIENTES VIPER PRO V1 NÃO PAGAM PELA LICENÇA NA AQUISIÇÃO DA VIPER PRO 2.0. VALE A PENA MIGRAR, FICOU INCRIVEL
-O NOVO PROJETO.
+## MODELO CACTUS
+
+<a target="_blank" href="https://cactus.venixserver.cloud/">
+    <div align="center">
+      <img src="https://uploaddeimagens.com.br/images/004/885/760/full/01.jpg?1742307056" alt="Descrição da imagem" />
+    </div>
+</a>
+
+[COMPRAR AQUI](https://wa.me/37256054826)
+
+## MODELO CHINESA
+
+<a target="_blank" href="https://chinesa.venixserver.cloud/">
+    <div align="center">
+      <img src="https://uploaddeimagens.com.br/images/004/885/761/full/02.jpg?1742307245" alt="Descrição da imagem" />
+    </div>
+</a>
+
+[COMPRAR AQUI](https://wa.me/37256054826)
+
 
 ## Correções
 Para qualquer dúvida ou relato de bugs, por favor, deixe-os aqui no GitHub. Farei o possível para resolver o mais rápido possível.
