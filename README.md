@@ -189,8 +189,6 @@ The Viper Pro 2.3 project has been completely revamped by the new Viper team, of
 
 🚀 If you’re not a developer and you're looking for a high-quality platform, with ongoing improvements, frequent updates, a modern interface and a rock-solid backend, get your code now and take your business to the next level.
 
-# $ 59,00 source code
-All models below
 
 ## MODELO VIPER 2.0
 
