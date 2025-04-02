@@ -221,8 +221,14 @@ All models below
 
 ### ------------------------------------------------------------------------------------
 
-## GAME API PLATFORM
+## Aggregator System - GAME API PLATFORM 
 Tired of constantly reloading and want games that are exclusively yours? We now offer a complete platform for GGR management, featuring over 117 games, all optimized with RTP control, demo mode, and influencer mode. In addition to enjoying your games without extra costs, you can also resell them with ease.
+
+# $ 2000 USD
+
+* Source code API
+* Source code Games
+
 
 <a target="_blank" href="https://chinesa.venixserver.cloud/">
     <div align="center">
