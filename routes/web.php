@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{any}', function () {
-    return view('app'); // Certifique-se de que resources/views/app.blade.php existe
+    return view('layouts.app'); // Certifique-se de que resources/views/app.blade.php existe
 })->where('any', '.*');
 
 
