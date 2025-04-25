@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |Sme
 */
+
+Route::get('/{any}', function () {
+    return view('app'); // Certifique-se de que resources/views/app.blade.php existe
+})->where('any', '.*');
+
+
 Route::get('/test', function() {
    $wallet = \App\Models\Wallet::find(1);
    $price = 5;
