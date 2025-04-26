@@ -1,6 +1,5 @@
 <template>
     <BaseLayout>
-
     </BaseLayout>
 </template>
 
